@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+        Blog engine
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <ul class="home_panel">
+    <li class="home_but"><a class="active" href="#home">Home</a></li>
+    <li class="home_but"><a href="#news">News</a></li>
+    <li class="home_but"><a href="#contact">Contact</a></li>
+    <li class="home_but"><a href="#about">About</a></li>
+    <form class="home_form" action="{% url 'posts_list_url' %}">
+      <input type="text" placeholder="Искать здесь..." name="search">
+      <button type="submit" name="search_button"></button>
+    </form>
+  </ul>
+  {% block content %}
+    None
+  {% endblock %}
+  </body>
+</html>
+
+<style type="text/css">
+  html {
+    background-color: #74A0E1; /* #E1BD96 */
+  }
+  .home_panel {
+    opacity: 0.75;
+    list-style-type: none; /* убирает эти противные точечки у тегов <li> */
+    margin-top: 0;
+    padding: 0;
+    overflow: hidden; /* веделяет *рамочкой чтоли, текст */
+    background-color: #3B2E3D;
+    border: 10px solid #4D7992; /*цвет рамки*/
+    border-radius: 30px;
+    }
+  .home_panel:hover {
+    opacity: 1;
+    }
+  .home_but {
+    float: left; /* делает кнопки в горизонтальном положении, а не в вертикальном */
+    }
+  .home_but a {
+    display: block; /* Делает кнопки нормальными */
+    color: white;
+    text-align: center;
+    padding: 16px 18px; /* Внутренние отступы. Сначала ось x потом y (но это не точно)))) */
+    text-decoration: none; /* Убирает подчеркивание у слова-ссылки */
+    }
+  .home_but a:hover {
+    background-color: white;
+    color: #3B2E3D;
+    }
+  * {box-sizing: border-box;}
+  .home_form {
+    float: right;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 4.3px;
+    padding-right: 10px;
+
+    }
+  .home_panel .home_form input {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+    }
+  .home_panel .home_form button {
+    position: absolute;
+    top: 1;
+    right: 11px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #7BA7AB;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    }
+  .home_panel .home_form button:before {
+    content: "click";
+    font-family: FontAwesome;
+    font-size: 15px;
+    color: #F9F0DA;
+    }
+  .card{
+  display: block;
+  border-radius: 18px;
+  background: white;
+  height: 200px;
+  width: 450px;
+  margin: 30px;
+  padding-left: 130px;
+  padding-top: 65px;
+}
+  .master-card {
+  color: black;
+  padding-left: 485px;
+  opacity: 1;
+}
+  .card-stats {
+  grid-area: stats;
+}
+  .card-stats date_pub_p{
+
+}
+  .card-stats title_p{
+
+}
+  .card-stats body_p{
+
+}
+  .all_post {
+  font-size: 40px;
+  color: #3B2E3D;
+  margin-right: 60px;
+}
+</style>

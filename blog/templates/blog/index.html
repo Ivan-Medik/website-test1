@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Blog engine
+{% endblock %}
+{% block content %}
+    <center><h2 class="all_post">Posts:</h2></center>
+    <div class="master-card">
+      {% for post in posts %}
+      <div class="card">
+        <a name="date_pub_p">{{ post.date_pub }}</a><br>
+        <b name="title_p">{{ post.title }}</b><br>
+        <a name="body_p">{{ post.body|truncatewords:15 }}</a><br>
+        <a name="button_read" href="{% url 'post_detail_url' slug=post.slug %}">Read</a>
+      </div>
+      {% endfor %}
+    </div>
+{% endblock %}

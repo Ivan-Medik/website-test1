@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ post.title }} - {{ block.super }}
+{% endblock %}
+{% block content %}
+
+    <center><h1 class="title_detail">
+        {{ post.title }}
+    </h1></center>
+    <center><p>
+        {{ post.body }}
+    </p></center>
+    <style type="text/css">
+        
+    </style>
+{% endblock %}
